@@ -1,0 +1,102 @@
+    1 y=0
+    2 tt=int(rnd(1)*300.5)
+    3 ts=1000
+    4 p=1000:c=130:l=50
+    5 print "{clr}instructions(y/n)"
+    6 geta$:ifa$=""then6
+    7 ifa$="y"thengosub5000
+   20 print"{clr}the year is";(ts+tt)
+   22 p=int(p)
+   23 l=int(l)
+   24 c=int(c)
+   30 print"{down}population:";p
+   35 print"{down}livestock:";l
+   40 print"{down}tons corn:";c:print"{down}"
+   41 for i=1to(p/10):print"X";:next
+   42 print"X":print"{down}"
+   43 for i=1to(l/10):print"~";:next
+   45 print"~":print"{down}"
+   46 for i=1to(c/10)
+   47 print"#";
+   48 next
+   54 print "{down}"
+   55 input "{down}tons of corn to sow";s
+   60 c=c-s
+   70 input "{down}tons to feed";f
+   80 c=c-f
+   95 if c>-1then105
+  100 print"{down}you haven't got that much!"
+  102 c=c+f+fl+s:goto 55
+  105 input"{down}livestock to slaghter";sl
+  107 l=l-sl
+  115 np=p
+  117 iff<=0thenp=10
+  120 p=p*(f/(p*.1))*(rnd(1)+.5)+(sl*10)
+  125 ifc>1000thenc=c-700
+  126 ifl<=0thenl=10
+  127 l=l*(fl/(l*.1))*(rnd(1)+.5)
+  130 h=s*rnd(1)*70
+  135 ifh<sthenh=s*2
+  137 h=int(h)
+  140 print"{clr}harvest:";h;" tons"
+  141 ifh=(s*2)orh<s*10andnoth<0ands<=0thenprint"{down}a bad year!!{down}"
+  142 ifh>s*10andh<s*40thenprint"{down}an average year{down}"
+  143 if h>s*40thenprint"{down}a good year!{down}"
+  144 ifs=0thenprint"you sow nothing;you get nothing"
+  145 ifc>1000thenprint"{down}rot hits corn;lose 700 tons!!{down}":c=c-700
+  146 ifl>1000thenprint"{down}plague!lose700 animals!{down}":l=l-700
+  147 ifh>400ors=0then159
+  148 fori=1toh
+  149 print"#B";
+  155 next
+  159 c=c+h
+  160 gety$:ify$=""then160
+  170 ifp<=(np*.65)thenprint"{clr}{rvon}the peasants are revolting!!{rvof}":goto200
+  175 ifp>3500thenprint"{clr}{rvon}you have been overthrown!!{rvof}":goto200
+  178 ify>9thenprint"{clr}{rvon}long live the king!!":goto 200
+  180 np=p
+  185 tt=tt+1
+  189 y=y+1
+  190 goto20
+  200 print"{down}population is";int(p)
+  205 print"{down}livestock:";l
+  210 print"{down}tons corn";c:print"{down}"
+  220 fori=1to(p/10)
+  230 print"X";
+  240 next
+  250 print"{down}":ifl=0then255
+  251 fori=1to(l/10)
+  252 print"~";
+  253 next
+  254 print "~":print"{down}"
+  255 fori=1to(c/10)
+  260 print"#";
+  270 next
+  271 print "#"
+  275 print "{down}{down}another go?"
+  280 gets$:ifs$=""then280
+  285 ifs$<>"n"ands$<>"y"then280
+  290 ifs$="y"thenrun
+  300 end
+ 5000 print"{clr}{rght}{rght}{rght}{rght}{rvon}bad king john{rvof}"
+ 5005 print"{down}X=10people;~=10animals;#=10tons of corn"
+ 5010 print"{down}1 ton of corn feeds 10 people"
+ 5020 print"{down}1 ton of corn feeds 10 animals"
+ 5030 print"{down}5 tons of corn should make 150 tons"
+ 5040 print"{down}after harvest press a key"
+ 5050 print"{down}at the start you have 50 animals,"
+ 5060 print"{down}130 tons of corn and a population of"
+ 5070 print"{down}1000. you can slaughter animals;1=10tons"
+ 5080 print"{down}of corn."
+ 5085 print"{down}{rght}{rght}{rght}{rght}{rght}{rght}{rght}{rght}{rght}{rvon}press key{rvof}"
+ 5090 getyy$:ifyy$=""then5090
+ 6000 print"{clr}{down}you can lose in two ways:"
+ 6010 print"{down}{down}(1)if you starve 30% of the"
+ 6020 print"{down}population (or more)"
+ 6030 print"{down}{down}(2)if the population grows above 3500"
+ 6040 print"{down}{down}to win you must stay on  the throne for"
+ 6050 print"{down}10 years"
+ 6060 print"{down}        good luck!"
+ 6070 print"{down}{rvon}{rght}{rght}{rght}{rght}{rght}{rght}{rght}{rght}press key{rvof}"
+ 6080 get yyy$:ifyyy$=""then6080
+ 6090 return
